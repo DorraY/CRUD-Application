@@ -6,7 +6,26 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1f96f83-2863-4b5e-a1a9-a86b5cabfc08" name="Default Changelist" comment="" />
+    <list default="true" id="b1f96f83-2863-4b5e-a1a9-a86b5cabfc08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_war_exploded/View/EmployeeForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Management_war_exploded/View/EmployeeForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_war_exploded/View/EmployeeList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Management_war_exploded/View/EmployeeList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_war_exploded/WEB-INF/classes/Controller/EmployeeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Management_war_exploded/WEB-INF/classes/Controller/EmployeeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_war_exploded/WEB-INF/classes/DAO/EmployeeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Management_war_exploded/WEB-INF/classes/DAO/EmployeeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_war_exploded/WEB-INF/classes/Model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Management_war_exploded/WEB-INF/classes/Model/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Management_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Management_war_exploded/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Management/Controller/EmployeeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Management/Controller/EmployeeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Management/DAO/EmployeeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Management/DAO/EmployeeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Management/Model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Management/Model/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EmployeeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmployeeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/EmployeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/View/EmployeeForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/View/EmployeeForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/View/EmployeeList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/View/EmployeeList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +64,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/web/View/EmployeeList.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
@@ -56,8 +78,11 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1aBCxODQowUVbbQSrpjrxguCMFB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib/jstl-1.2.jar!/" />
@@ -185,11 +210,22 @@
       <option name="presentableId" value="Default" />
       <updated>1586199845548</updated>
       <workItem from="1586199848988" duration="16706000" />
-      <workItem from="1586246253062" duration="6277000" />
+      <workItem from="1586246253062" duration="19544000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -1,15 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: dorra
-  Date: 06/04/2020
-  Time: 21:54
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Gestionnaire d'entreprise</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 </head>
 <body>
 <div style="text-align: center;">
@@ -22,40 +18,40 @@
 </div>
 <div align="center">
 
-        <form action="${pageContext.request.contextPath}/EmployeeServlet?action=insert"method="POST">
+        <form action="${pageContext.request.contextPath}/EmployeeServlet?action=list"method="POST">
 
+            <div class="form-group">
 
-            <table border="1" cellpadding="5">
-                <caption>
-                    <h2>
+            <table class="table table-striped table-bordered" >
 
-                    </h2>
-                </caption>
-                    <input type="hidden" name="matricule"  value="${employee.matricule}" />
+                    <input type="hidden" name="matricule" value=<%= request.getParameter("id") %> />
                 <tr>
                     <th>Nom: </th>
                     <td>
-                        <input type="text" name="Nom" size="45" value="${employee.nom}" />
+                        <input class="form-control" type="text" name="Nom" size="45" value="${employee.nom}" />
                     </td>
                 </tr>
                 <tr>
                     <th>Prénom: </th>
                     <td>
-                        <input type="text" name="Prénom" size="45"  value="${employee.prénom}" />
+                        <input class="form-control" type="text" name="Prénom" size="45"  value="${employee.prénom}" />
                     </td>
                 </tr>
                 <tr>
                     <th>Département: </th>
                     <td>
-                        <input type="text" name="Département" size="5"   value="${employee.département}" />
+                        <input class="form-control" type="number" name="Département" size="5"   value="${employee.département}" />
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <input type="submit" value="Save" />
+                        <button class="btn btn-lg btn-primary" type="submit">Valider</button>
+
                     </td>
                 </tr>
             </table>
+            </div>
+
         </form>
 </div>
 </body>

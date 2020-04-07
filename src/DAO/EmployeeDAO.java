@@ -33,7 +33,11 @@ public class EmployeeDAO {
                 String nom = resultSet.getString("Nom");
                 String prénom = resultSet.getString("Prénom");
                 int département = resultSet.getInt("Département");
-                Employee employee = new Employee(matricule, nom, prénom, département);
+                Employee employee = new Employee();
+                employee.setDépartement(département);
+                employee.setNom(nom);
+                employee.setPrénom(prénom);
+                employee.setMatricule(matricule);
                 listEmployee.add(employee);
             }
         }
@@ -51,7 +55,7 @@ public class EmployeeDAO {
 
         try {
             String sql = "INSERT INTO Employé (Matricule, Nom, Prénom,Département) VALUES "
-                    +"(NULL' "+employee.getNom()+"','"+employee.getPrénom()+"','"+employee.getDépartement()+"');";
+                    +"(NULL,'"+employee.getNom()+"','"+employee.getPrénom()+"','"+employee.getDépartement()+"');" ;
             connection = ConnectionDB.openConnection();
             preparedStatement= connection.prepareStatement(sql);
             preparedStatement.executeUpdate();
@@ -86,7 +90,9 @@ public class EmployeeDAO {
         boolean flag = false;
         try {
 
-            String sql="UPDATE Employé  SET name='"+employee.getNom()+"',Département='"+employee.getDépartement()+ "',Prénom='"+employee.getPrénom()+"' where Matricule="+employee.getMatricule()+";";
+            String sql="UPDATE Employé  SET Nom='"+employee.getNom()+"',Prénom='"+employee.getPrénom()+ "',Département='"+employee.getDépartement()+"' where Matricule="+employee.getMatricule()+";";
+            System.out.println(sql);
+
             connection =ConnectionDB.openConnection();
             preparedStatement= connection.prepareStatement(sql);
             preparedStatement.executeUpdate();

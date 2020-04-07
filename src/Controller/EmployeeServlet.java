@@ -4,7 +4,10 @@ import DAO.EmployeeDAO;
 import Model.Employee;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -32,12 +35,6 @@ public class EmployeeServlet extends  HttpServlet{
         }
         try {
             switch (action) {
-                case "new":
-                    showNewForm(request, response);
-                    break;
-                case "insert":
-                    insertEmployee(request, response);
-                    break;
                 case "update":
                     updateEmployee(request, response);
                     break;
@@ -57,50 +54,64 @@ public class EmployeeServlet extends  HttpServlet{
         }
     }
 
+    public ArrayList<String> handleRequest(HttpServletRequest req, HttpServletResponse res) throws IOException {
+
+        res.setContentType("text/plain");
+        ArrayList<String> resultat = new ArrayList<>();
+        Enumeration<String> parameterNames = req.getParameterNames();
+
+        while (parameterNames.hasMoreElements()) {
+
+            String paramName = parameterNames.nextElement();
+            String[] paramValues = req.getParameterValues(paramName);
+            for (int i = 0; i < paramValues.length; i++) {
+                String paramValue = paramValues[i];
+                resultat.add(paramValue);
+            }
+        }
+        return resultat;
+
+}
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int matricule = Integer.parseInt(request.getParameter("matricule"));
-        String prenom = request.getParameter("Prénom");
-        String nom = request.getParameter("Nom");
-        int departement = Integer.parseInt(request.getParameter("Département"));
+
+        ArrayList<String> LesParamteres ;
 
         Employee employee = new Employee();
+        LesParamteres = handleRequest(request,response);
+        for (int i=0;i<LesParamteres.size();i++) {
+            System.out.println(i+ " " +LesParamteres.get(i));
+        }
+        employee.setNom(LesParamteres.get(2));
 
-        employee.setDépartement(departement);
-        employee.setMatricule(matricule);
-        employee.setNom(nom);
-        employee.setPrénom(prenom);
+        employee.setDépartement(Integer.parseInt(LesParamteres.get(4)));
+        employee.setPrénom(LesParamteres.get(3));
 
-        if (matricule==0) {
+        handleRequest(request,response);
+        if (LesParamteres.get(1)==null) {
             try { // save
                 if (employeeDAO.insertEmployee(employee)) {
                     request.setAttribute("message","C'est bon. Employé ajouté.");
+                    response.sendRedirect("list");
+
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
             request.setAttribute("message","C'est bon. Employé ajouté");
         } else { //update
-            employee.setMatricule(matricule);
+            employee.setMatricule(Integer.parseInt(LesParamteres.get(1)));
             try {
                 if (employeeDAO.updateEmployee(employee)) {
                     request.setAttribute("message","Employé modifié.");
+                    response.sendRedirect("list");
+
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }
-        try {
-            listEmployee(request,response);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            listEmployee(request,response);
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
 
     }
@@ -132,18 +143,6 @@ public class EmployeeServlet extends  HttpServlet{
 
     }
 
-    private void insertEmployee(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException {
-        dispatcher = request.getRequestDispatcher("/View/EmployeeForm.jsp");
-
-        String nom = request.getParameter("Nom");
-        String prenom = request.getParameter("Prénom");
-        int departement = Integer.parseInt(request.getParameter("Département"));
-
-        Employee newEmployee = new Employee(nom, prenom, departement);
-        employeeDAO.insertEmployee(newEmployee);
-        response.sendRedirect("list");
-    }
 
     private void updateEmployee(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
